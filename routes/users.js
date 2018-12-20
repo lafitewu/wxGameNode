@@ -6,7 +6,7 @@ router.get('/add', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/cj', function(req, res, next) {
-  res.send('respond with a resource2222');
+router.get('/demo', function(req, res, next) {
+  res.send('ok好吧');
 });
 module.exports = router;
