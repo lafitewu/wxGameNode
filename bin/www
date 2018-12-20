@@ -5,9 +5,16 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('nodeapi:server');
+var debug = require('debug')('wxGameNode:server');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var path = require('path');
 
+var options = {
+  key: fs.readFileSync(path.join(__dirname,'../public/sign/1640558_node.dongzhe.co.key')),
+  cert: fs.readFileSync(path.join(__dirname,'../public/sign/1640558_node.dongzhe.co.pem'))
+};
 /**
  * Get port from environment and store in Express.
  */
@@ -20,12 +27,14 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var severHttps= https.createServer(options,app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
+severHttps.listen(443);
 server.on('error', onError);
 server.on('listening', onListening);
 
