@@ -31,10 +31,10 @@ var responseJSON = function (res, ret) {
 router.get('/', function(req, res, next) {
 	res.writeHead(301, {
 		'Location': 'https://www.lafitewu.xyz/'
-	  });
+	});
 	res.end()
 });
-//小程序分享api
+//鞭炮小程序分享api
 router.get('/wxTool/share/api',function(req,res,next) {
 	pool.getConnection(function(err, connection) {
 		connection.query(userSQL.queryWX, function(err, result) {
@@ -54,6 +54,29 @@ router.get('/wxTool/share/api',function(req,res,next) {
 		});
 	});
 });
+
+// 写一份信小程序 信纸api
+router.get('/wxTool/api/selecthead',function(req,res,next) {
+	pool.getConnection(function(err, connection) {
+		connection.query(userSQL.queryLetterHead, function(err, result) {
+			console.log(result);
+			var data = result;
+			if(result) {      
+				result = {   
+				code: 200,   
+				msg:'请求成功',
+				datas: data
+				};  
+			}
+			// 以json形式，把操作结果返回给前台页面     
+			responseJSON(res, result);   
+
+			// 释放连接  
+			connection.release(); 
+		});
+	});
+});
+
 // 新闻api
 router.get('/yyt/cj/api', function(req, res, next) {
 	//从连接池获取连接 

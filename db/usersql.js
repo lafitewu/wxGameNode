@@ -9,6 +9,7 @@ var UserSQL = {
 	deleteAdmin: 'delete from htt_tab_dynamic_list where id = ?',
 	updateAdmin: 'update htt_tab_dynamic_list set category = ?,seqNum = ?,title = ?,resource = ?,url = ?,type = ?,images = ?,status = ?,updateDate = NOW() where id = ?',
 	updateStatus: 'update htt_tab_dynamic_list set status = ?,updateDate = NOW() where id =?',
-	queryWX: "select * from gamefiresharemsg"
+	queryWX: "select * from gamefiresharemsg",
+	queryLetterHead: "select bgUrl from letterhead"
 };
 module.exports = UserSQL;
