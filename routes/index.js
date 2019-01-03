@@ -59,7 +59,27 @@ router.get('/wxTool/share/api',function(req,res,next) {
 router.get('/wxTool/api/selecthead',function(req,res,next) {
 	pool.getConnection(function(err, connection) {
 		connection.query(userSQL.queryLetterHead, function(err, result) {
-			console.log(result);
+			var data = result;
+			if(result) {      
+				result = {   
+				code: 200,   
+				msg:'请求成功',
+				datas: data
+				};  
+			}
+			// 以json形式，把操作结果返回给前台页面     
+			responseJSON(res, result);   
+
+			// 释放连接  
+			connection.release(); 
+		});
+	});
+});
+
+// 写一份信小程序 背景音乐api
+router.get('/wxTool/api/selectMusic',function(req,res,next) {
+	pool.getConnection(function(err, connection) {
+		connection.query(userSQL.queryLetterMusic, function(err, result) {
 			var data = result;
 			if(result) {      
 				result = {   

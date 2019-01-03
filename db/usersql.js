@@ -10,6 +10,7 @@ var UserSQL = {
 	updateAdmin: 'update htt_tab_dynamic_list set category = ?,seqNum = ?,title = ?,resource = ?,url = ?,type = ?,images = ?,status = ?,updateDate = NOW() where id = ?',
 	updateStatus: 'update htt_tab_dynamic_list set status = ?,updateDate = NOW() where id =?',
 	queryWX: "select * from gamefiresharemsg",
-	queryLetterHead: "select bgUrl from letterhead"
+	queryLetterHead: "select bgUrl from letterhead",
+	queryLetterMusic: "select name,url from letterMusic"
 };
 module.exports = UserSQL;
