@@ -5,7 +5,6 @@ var mysql = require('mysql');
 var dbConfig = require('../db/config');
 var userSQL = require('../db/usersql');
 
-
 // 使用DBConfig.js的配置信息创建一个MySQL连接池
 var pool = mysql.createPool( dbConfig.mysql );
 
@@ -102,7 +101,7 @@ router.post('/wxTool/api/saveInfo', function(req, res, next) {
 	var datas;
 	pool.getConnection(function(err, connection) { 
 		// 获取前台页面传过来的参数  
- 		var param = req.query || req.params;
+ 		var param = req.body;
 		console.log(param);
 		var ParamArr = [
 			param.name,
