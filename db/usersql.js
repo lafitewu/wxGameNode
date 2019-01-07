@@ -11,6 +11,7 @@ var UserSQL = {
 	updateStatus: 'update htt_tab_dynamic_list set status = ?,updateDate = NOW() where id =?',
 	queryWX: "select * from gamefiresharemsg",
 	queryLetterHead: "select bgUrl from letterhead",
-	queryLetterMusic: "select name,url from letterMusic"
+	queryLetterMusic: "select name,url from letterMusic",
+	saveWxContent: "insert into letterContent(nickName,iconUrl,gender,content,bgUrl,musicUrl,addresses,serviceTime,password,autograph) values(?,?,?,?,?,?,?,?,?,?)"
 };
 module.exports = UserSQL;
