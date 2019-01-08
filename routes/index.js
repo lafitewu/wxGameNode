@@ -102,7 +102,7 @@ router.post('/wxTool/api/saveInfo', function(req, res, next) {
 	pool.getConnection(function(err, connection) { 
 		// 获取前台页面传过来的参数  
  		var param = req.body;
-		console.log(param);
+		// console.log(param);
 		var ParamArr = [
 			param.name,
 			param.iconUrl,
