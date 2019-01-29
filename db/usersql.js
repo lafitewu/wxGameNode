@@ -10,7 +10,7 @@ var UserSQL = {
 	updateAdmin: 'update htt_tab_dynamic_list set category = ?,seqNum = ?,title = ?,resource = ?,url = ?,type = ?,images = ?,status = ?,updateDate = NOW() where id = ?',
 	updateStatus: 'update htt_tab_dynamic_list set status = ?,updateDate = NOW() where id =?',
 	queryWX: "select * from gamefiresharemsg",
-	queryTurn: "select rocketTurn,startTurn,leftTurn,rightTurn,rocketLimit,startLimit from shareTurn",
+	queryTurn: "select rocketTurn,startTurn,leftTurn,rightTurn,rocketLimit,startLimit,oneGoShow,moreGoShow from shareTurn",
 	queryLetterHead: "select bgUrl from letterhead",
 	queryLetterMusic: "select name,url from letterMusic",
 	saveWxContent: "insert into letterContent(nickName,iconUrl,gender,content,bgUrl,musicUrl,addresses,serviceTime,password,autograph) values(?,?,?,?,?,?,?,?,?,?)"
