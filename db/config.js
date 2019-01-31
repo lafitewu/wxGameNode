@@ -1,13 +1,16 @@
 module.exports = {  
 	mysql: {   
-		host: '112.74.48.126',
-		// host: '182.92.82.188',     
-		user: 'lafitewu',   
-		// user: 'root',
-		password: '123456jqk', 
-		// password: 'Yfax2016',  
-		database:'lafiteTest',
-		// database:'cfdb',
-		port: 13306
+		// host: '112.74.48.126',
+		// user: 'lafitewu',   
+		// password: '123456jqk', 
+		// database:'lafiteTest',
+		// port: 13306
+		
+
+		host: 'rm-wz94c13bubuv0ob23uo.mysql.rds.aliyuncs.com',
+		user: 'bpdb',   
+		password: 'Bpdb2019666', 
+		database:'bpdb',
+		port: 3306
 	}
 };
